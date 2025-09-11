@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
 
 // Base User Schema
-
-const userSchema = new mongoose.Schema({
+export const userSchema = new mongoose.Schema({
     name: { type : String },
     role: {
         type: String,
@@ -10,10 +9,9 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     isActivated: {type: Boolean, default: false}
-})
+});
 
 // Customer Schema
-
 const customerSchema = new mongoose.Schema({
     ...userSchema.obj,
     phone : { type: Number, required: true, unique: true},
@@ -23,10 +21,9 @@ const customerSchema = new mongoose.Schema({
         longitude: { type: Number },
     }, 
     address: { type: String },
-})
+});
 
 // Delivery Partner Schema
-
 const deliveryPartnerSchema = new mongoose.Schema({
     ...userSchema.obj,
     email: { type: String, required: true },
@@ -44,9 +41,7 @@ const deliveryPartnerSchema = new mongoose.Schema({
     },
 });
 
-
 // Admin Schema
-
 const adminSchema = new mongoose.Schema({
     ...userSchema.obj,
     email: { type: String, required: true },

@@ -15,4 +15,4 @@ export{
     Admin,
     Product,
     Category,
-};
+}

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { userSchema } from "./user.js";
 
 const branchSchema = new mongoose.Schema({
   ...userSchema.obj,
@@ -8,10 +9,10 @@ const branchSchema = new mongoose.Schema({
     longitude: { type: Number },
   },
   address: { type: String },
-  deliveryPrtners: [
+  deliveryPartners: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "DeliveryPartners",
+      ref: "DeliveryPartner",
     },
   ],
 });
